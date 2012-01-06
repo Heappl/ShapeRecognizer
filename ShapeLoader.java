@@ -39,7 +39,6 @@ public class ShapeLoader {
 			if (curr == null) {
 				break;
 			}
-			System.err.println(curr + " " + new Vector(prev, curr));
 			visited.add(curr);
 			diffs.add(new Vector(prev, curr));
 			prev = curr;
@@ -57,7 +56,6 @@ public class ShapeLoader {
 			{
 				String[] tokens = line.split(" ");
 				File imageFile = new File(shapesFile.getParentFile() + "/" + tokens[0]);
-				System.err.println("reading " + tokens[0]);
 				recognizer.addShape(readShape(ImageIO.read(imageFile),
 											  new Point(Integer.valueOf(tokens[1]), Integer.valueOf(tokens[2]))));
 			}
